@@ -1,13 +1,24 @@
 {
-  "posts": [
-    { "id": "1", "title": "a title", "views": 100 },
-    { "id": "2", "title": "another title", "views": 200 }
-  ],
-  "comments": [
-    { "id": "1", "text": "a comment about post 1", "postId": "1" },
-    { "id": "2", "text": "another comment about post 1", "postId": "1" }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  "users": [
+    {
+      "id": "LBrkgDNr6KfGbcGU1XDoD",
+      "username": "zainub",
+      "email": "zainubrehan@gmail.com",
+      "password": "saimzainub"
+    },
+    {
+      "id": "dq1Fa0dGMRLizxvkmHsOP",
+      "username": "zainublove",
+      "email": "zainublove",
+      "password": "zainublovesaim",
+      "isAdmin": false
+    },
+    {
+      "id": "hXiPZg8-MNAatkV6-x6Ca",
+      "username": "asdf",
+      "email": "adsfasd",
+      "password": "fasdf",
+      "isAdmin": false
+    }
+  ]
 }
