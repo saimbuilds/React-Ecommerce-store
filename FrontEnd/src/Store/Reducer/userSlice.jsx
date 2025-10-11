@@ -10,7 +10,8 @@ export const userSlice = createSlice({
   initialState,
   reducers: {
    loadUser: (state, action) =>{
-    state.users = action.payload
+    state.users = action.payload;
+    // console.log(state.users)
    }
   },
 })
