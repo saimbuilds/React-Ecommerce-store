@@ -7,8 +7,8 @@ import  cartSlice  from './Reducer/cartSlice'
 
 export default configureStore({
   reducer: {
-    user: userSlice,
-    products: productSlice,
-    carts: cartSlice
+    userSlice: userSlice,
+    productSlice: productSlice,
+    cartSlice: cartSlice
   },
 })

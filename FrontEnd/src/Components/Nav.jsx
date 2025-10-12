@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 
 const Nav = () => {
-  const user = useSelector((state) => state.user.users);
+  const user = useSelector((state) => state.userSlice.users);
   // console.log(user)
   
   
@@ -14,7 +14,10 @@ const Nav = () => {
       {
         (user && user.username) ?
         <>
-          {(user.isAdmin)?<><NavLink to="/admin/create-product">Create Product</NavLink></>:<></>}
+          {(user.isAdmin)?<>
+            <NavLink to="/admin/create-product">Create Product</NavLink>
+            <NavLink to="/admin/update-product">Update Product</NavLink>
+          </>:<></>}
         </>
         :<>
           <NavLink to="/login">Login</NavLink>
