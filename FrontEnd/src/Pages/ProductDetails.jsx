@@ -2,10 +2,14 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
+import { asyncDeleteProduct, asyncUpdateProduct } from "../Store/Reducer/Actions/productAction";
 
 const ProductDetails = () => {
   const { id } = useParams();
   const products = useSelector((state) => state.productSlice.products);
+  const users = useSelector((state)=>state.userSlice.users);
+  
+  
   const product = products?.find((product) => product.id == id);
   console.log(product);
 
@@ -21,9 +25,14 @@ const ProductDetails = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const updateProductHandler = (product) => {
-    // dispatch(async(product))
-    console.log(product);
-  };
+    dispatch(asyncUpdateProduct(id, product))
+    
+  }; 
+
+  const deleteHandler = ()=>{
+    dispatch(asyncDeleteProduct(id));
+    navigate("/products")
+  }
 
   return (
     <>
@@ -39,7 +48,7 @@ const ProductDetails = () => {
             <h3 className="text-lg">Category: {product.category}</h3>
           </div>
         </div>
-        <div className="w-[100%] ">
+        {users && (users.isAdmin)? <div className="w-[100%] ">
           <form
             onSubmit={handleSubmit(updateProductHandler)}
             className="flex flex-col w-full text-white gap-8  mt-10 "
@@ -76,8 +85,10 @@ const ProductDetails = () => {
             <button className="bg-blue-500 w-fit px-2 py-1 rounded-lg cursor-pointer">
               Update Product
             </button>
+            <button onClick={deleteHandler} className="w-fit px-2 py-1 rounded-lg cursor-pointer bg-red-400">Delete Product</button>
           </form>
-        </div>
+        </div>: ""}
+       
       </div>
     </>
   );
