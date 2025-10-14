@@ -17,12 +17,12 @@ const Nav = () => {
   
   return (
     <nav className="flex justify-center items-center gap-x-5 ">
-      <NavLink to="/">Home</NavLink>
-      <NavLink to="/products">Products</NavLink>
+      <NavLink to="/">Products</NavLink>
+     
       {
         (user && user.username) ?
         <>
-         
+          <NavLink to="/user-profile">Settings</NavLink>
           {(user.isAdmin)?<>
             <NavLink to="/admin/create-product">Create Product</NavLink>
             <NavLink to="/admin/update-product">Update Product</NavLink>

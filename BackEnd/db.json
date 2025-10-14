@@ -6,13 +6,6 @@
       "email": "admin@admin.com",
       "password": "admin123",
       "isAdmin": true
-    },
-    {
-      "id": "pXTQvzBlaeaXa2G6Lsjy1",
-      "username": "saim",
-      "email": "saim",
-      "password": "saim",
-      "isAdmin": false
     }
   ],
   "products": [

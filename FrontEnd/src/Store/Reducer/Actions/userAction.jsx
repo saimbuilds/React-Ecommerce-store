@@ -64,3 +64,15 @@ export const asyncCurrentUser = (user) => async (dispatch, getState) =>{
         
     }
 }
+export const asyncUpdateUser = (id, user) => async(dispatch, getState) =>{
+   const {data} =  await axios.patch("/users/"+id, user)
+   console.log(data);
+   
+    localStorage.setItem("user", JSON.stringify(data));
+}
+export const asyncDeleteUser = (id, user) => async(dispatch, getState) =>{
+   await axios.delete("/users/"+id);
+   localStorage.removeItem("user")
+   dispatch(asyncCurrentUser())
+    
+}
