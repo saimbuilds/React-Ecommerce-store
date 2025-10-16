@@ -1,6 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { Link, useNavigate } from "react-router-dom";
 import { asyncLoginUser } from "../Store/Reducer/Actions/userAction";
@@ -10,6 +10,9 @@ import { toast } from "react-toastify";
 
 
 const Login = () => {
+  const {userSlice: {users}, productSlice: {products}} = useSelector((state) => state);
+  
+  
   const { register, handleSubmit, reset } = useForm();
   const dispatch = useDispatch();
   const navigate = useNavigate();

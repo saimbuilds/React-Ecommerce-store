@@ -1,11 +1,35 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import Login from './Login';
 import { Link } from 'react-router-dom';
+import { asyncUpdateUser } from '../Store/Reducer/Actions/userAction';
 
 
 const Products = () => {
-  const products = useSelector((state) => state.productSlice.products);
+  const dispatch = useDispatch();
+
+  const {userSlice: {users}, productSlice: {products}} = useSelector(state=>state)
+  const addToCartHandler = (id) =>{
+    const copyUser = {...users, cart: [...users.cart]}
+    // here the concept of deep and shallowcopy is used idk what it is
+    
+    // const x=  copyUser.cart.findIndex(c => c);
+
+    const x = copyUser.cart.findIndex ((c) => c.id==id);
+    
+    if (x==-1){
+      console.log("-1 runed");
+      
+      copyUser.cart.push({productId: id, quantity: 1})
+    }else{
+      copyUser.cart[x].quantity+=1;
+      console.log("i runned");
+      
+    }
+    dispatch(asyncUpdateUser(copyUser.id, copyUser))
+    
+    
+  }  
   const renderProduct = products.map((product)=>{
     return (
       
@@ -15,7 +39,7 @@ const Products = () => {
         <small>{product.description.slice(0,100)}....</small>
         <div className='flex justify-between'>
           <p>{product.price}$</p>
-          <button className='bg-blue-400 px-2 py-1 rounded-lg cursor-pointer'>Add to Cart</button>
+          <button onClick={()=>addToCartHandler(product.id)} className='bg-blue-400 px-2 py-1 rounded-lg cursor-pointer'>Add to Cart</button>
         </div>
         <Link to = {`/product/${product.id}`} className='bg-blue-600 text-sm text-white px-2 py-1 rounded-lg cursor-pointer w-fit'>More Info</Link>
       </div>

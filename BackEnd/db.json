@@ -6,6 +6,19 @@
       "email": "admin@admin.com",
       "password": "admin123",
       "isAdmin": true
+    },
+    {
+      "id": "Z2ICxoChDqOBcPUhdYPZJ",
+      "username": "saim",
+      "email": "saim",
+      "password": "saim",
+      "isAdmin": false,
+      "cart": [
+        {
+          "productId": "QOLI6eDYxjP1xGCaI91qL",
+          "quantity": 1
+        }
+      ]
     }
   ],
   "products": [
