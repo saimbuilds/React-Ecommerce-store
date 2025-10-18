@@ -36,9 +36,9 @@ const ProductDetails = () => {
 
   return (
     <>
-      <div className="w-full h-auto bg-gray-800 flex flex-col overflow-hidden mt-20 px-8 justify-between">
-        <div className="w-full flex justify-between border-b-2 py-10">
-          <div className="w-[40%] h-[60vh] bg-blue-100 rounded-2xl overflow-hidden ">
+      <div className="w-full h-screen bg-gray-800 flex flex-col overflow-hidden mt-20 px-8 justify-between">
+        <div className="w-full h-[45%] flex justify-around  py-10">
+          <div className="w-[30%] h-[90%] bg-blue-100 rounded-2xl overflow-hidden ">
             <img className="w-full h-full" src={product.image} alt="" />
           </div>
           <div className="w-1/2 flex flex-col gap-4">
@@ -48,7 +48,7 @@ const ProductDetails = () => {
             <h3 className="text-lg">Category: {product.category}</h3>
           </div>
         </div>
-        {users && (users.isAdmin)? <div className="w-[100%] ">
+        {users && (users.isAdmin)? <div className="w-[100%]  border-t-2">
           <form
             onSubmit={handleSubmit(updateProductHandler)}
             className="flex flex-col w-full text-white gap-8  mt-10 "

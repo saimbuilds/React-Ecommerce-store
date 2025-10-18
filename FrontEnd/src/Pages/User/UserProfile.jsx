@@ -39,7 +39,7 @@ const UserProfile = () => {
     <div className="flex justify-center w-screen h-screen">
       <form
         onSubmit={handleSubmit(userProfileHandler)}
-        className="flex flex-col w-1/2 text-white gap-8 items-center mt-10 "
+        className="flex flex-col w-1/2 text-2xl text-white gap-8 items-center mt-10 "
       >
         
         <input {...register("username")} type="text"  className="outline-0 border-b py-1 w-1/2" />

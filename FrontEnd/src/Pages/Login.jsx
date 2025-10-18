@@ -38,10 +38,10 @@ const Login = () => {
           className="flex flex-col w-1/2 text-white gap-5 items-center mt-10 "
         >
           
-          <input {...register("email")} type="text" placeholder="email" className="outline-0 border-b py-1 w-1/2" />
-          <input {...register("password")} type="text" placeholder="password" className="outline-0 border-b py-1 w-1/2" />
-          <button className="bg-blue-500 px-2 py-1 rounded-lg cursor-pointer">Login</button>
-          <p className="text-sm mt-3">Don't have an account? <Link to="/register" className="text-blue-400 cursor-pointer">Register</Link></p>
+          <input {...register("email")} type="text" placeholder="email" className="text-2xl outline-0 border-b py-1 w-1/2" />
+          <input {...register("password")} type="text" placeholder="password" className="text-2xl outline-0 border-b py-1 w-1/2" />
+          <button className="bg-blue-500 px-2 py-1 rounded-lg cursor-pointer text-2xl ">Login</button>
+          <p className="text-xl mt-3">Don't have an account? <Link to="/register" className="text-2xl text-blue-400 cursor-pointer">Register</Link></p>
         </form>
       </div>
     );

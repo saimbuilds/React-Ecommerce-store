@@ -12,12 +12,12 @@ const CreateProduct = () => {
       const createProductHandler = (product) => {
         product.id = nanoid();
         dispatch(asyncCreateProduct(product))
-        navigate("/products");
+        navigate("/");
         
         
       };
   return (
-     <div className="flex w-full justify-center ">
+     <div className="flex w-full h-screen justify-center ">
       <form
         onSubmit={handleSubmit(createProductHandler)}
         className="flex flex-col w-1/2 text-white gap-8 items-center mt-10 "

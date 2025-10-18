@@ -8,6 +8,7 @@ import UpdateProduct from '../Pages/Admin/UpdateProduct'
 import CreateProduct from '../Pages/Admin/CreateProduct'
 import ProductDetails from '../Pages/ProductDetails'
 import UserProfile from '../Pages/User/UserProfile'
+import Cart from '../Pages/User/Cart'
 
 
 const MainRoutes = () => {
@@ -22,6 +23,7 @@ const MainRoutes = () => {
         <Route path='/admin/create-product' element={<CreateProduct/>}/>
         <Route path='/product/:id' element={<ProductDetails/>}/>
         <Route path='/user-profile' element={<UserProfile/>}/>
+        <Route path='/user-cart' element={<Cart/>}/>
 
     </Routes>
   )
