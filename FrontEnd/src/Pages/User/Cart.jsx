@@ -34,7 +34,7 @@ const Cart = () => {
     // console.log(x);
 
     return (
-        <div className="p-5 h-screen flex justify-center">
+        <div className="p-5 h-screen flex flex-col mt-50 justify-center bg-gray-800 w-screen">
             {users?.cart?.map((ci, i) => {
                 // If ci is valid but ci.product is missing, this check prevents rendering the item
                 if (!ci || !ci.product) {
@@ -43,7 +43,7 @@ const Cart = () => {
                 
                 return (
                     <div
-                        className="mb-3 w-2/3 bg-gray-700  p-2 flex justify-between items-center h-fit rounded-lg"
+                        className="mb-3 w-2/3 bg-gray-700  p-2 flex  justify-between items-center h-fit rounded-lg"
                         key={i} 
                     >
                         <img

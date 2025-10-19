@@ -14,7 +14,7 @@ const App = () => {
  }, [])
   
   return (
-    <div className='w-screen overflow-x-hidden h-auto  bg-gray-800 text-white p-5'>
+    <div className='w-screen min-h-screen  bg-gray-800 text-white p-5'>
       <Nav/>
       <MainRoutes/>
        
